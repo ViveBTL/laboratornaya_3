@@ -11,7 +11,7 @@ string replace_all_can(string text, const string& new_word) {
 
     while ((z = lower_text.find("can", z)) != string::npos) {
         bool left_ok = (z == 0 || !isalpha(lower_text[z - 1]));
-        bool right_ok = (z + 3 >= lower_text.size() || !isalpha(lower_text[z + 3]));
+        bool right_ok = (!isalpha(lower_text[z + 3]));
 
         if (left_ok && right_ok) {
             text.replace(z, 3, new_word);

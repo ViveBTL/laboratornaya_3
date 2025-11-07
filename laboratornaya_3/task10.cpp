@@ -7,12 +7,12 @@ void task10() {
     std::string text;
     std::cout << "Enter the text: ";
     std::getline(std::cin, text);
-    short numofletters = 0, numofa = 0;
+    short numofletters = 0, numofa = std::count(text.begin(), text.end(), 'a') + std::count(text.begin(), text.end(), 'A');
     for (char z : text) {
         if (isalpha(z)) {
             numofletters++;
-            if (tolower(z) == 'a')
-                numofa++;
+            //if (tolower(z) == 'a')
+                //numofa++;
         }
     }
     if (numofletters > 0)
